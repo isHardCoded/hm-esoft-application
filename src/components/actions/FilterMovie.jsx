@@ -1,6 +1,6 @@
-const FilterMovie = ({ onClick, children, className }) => {
+const FilterMovie = ({ onClick, children }) => {
     return (
-        <button className={className} onClick={onClick}>{children}</button>
+        <button className="filterBtn" onClick={onClick}>{children}</button>
     )
 }
 

@@ -1,8 +1,16 @@
-const AddLikedMovie = () => {
-    return (
-        <>
-        </>
-    )
-}
+import React from 'react';
+import { useMovieContext } from '../context/ContextMovie';
 
-export default AddLikedMovie
+const AddLikedMovie = ({title}) => {
+    const { setLikedMovies } = useMovieContext();
+
+    const handleAddLikedMovie = () => {
+        setLikedMovies(prevMovies => [...prevMovies, title]);
+    };
+
+    return (
+        <button className='addBtn' onClick={handleAddLikedMovie}>Добавить в избранное</button>
+    );
+};
+
+export default AddLikedMovie;

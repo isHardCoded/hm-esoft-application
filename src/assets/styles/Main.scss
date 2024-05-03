@@ -1,8 +1,10 @@
 @import url(./elements/CardMovie.scss);
 @import url(./pages/MainMovie.scss);
-@import url(./elements/SortMovie.scss);
-@import url(./elements/FilterMovie.scss);
+@import url(./actions/SortMovie.scss);
+@import url(./actions/FilterMovie.scss);
 @import url(./elements/Sidebar.scss);
+@import url(./elements/Header.scss);
+@import url(./actions/AddButtons.scss);
 
 .container {
     width: 1090px;
@@ -21,6 +23,13 @@
     flex-direction: column;
 
     gap: 30px;
+    margin-top: 30px;
+    
+    h3 {
+        color: white;
+        background-color: rgb(64, 191, 255);;
+        padding: 10px;
+    }
 }
 
 .sortButtons {

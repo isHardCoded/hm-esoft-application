@@ -1,4 +1,4 @@
-.sortBtn {
+.filterBtn   {
     background: rgb(255, 255, 255);
     box-shadow: 3px 0px 35px 0px rgba(0,0,0,0.1);
     border: none;
@@ -9,14 +9,20 @@
     font-size: 14px;
     padding: 10px;
 
+    width: 147.5px;
+
     cursor: pointer;
+    transition: .1s ease;
 
     &:hover {
         transform: scale(1.05);
         transition: .1s ease;
+        background: rgb(64, 191, 255);
+        color: white;
     }
 
     &:active {
         transform: scale(0.99);
     }
 }
+

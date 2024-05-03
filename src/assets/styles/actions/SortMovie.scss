@@ -1,4 +1,4 @@
-button   {
+.sortBtn {
     background: rgb(255, 255, 255);
     box-shadow: 3px 0px 35px 0px rgba(0,0,0,0.1);
     border: none;
@@ -10,17 +10,15 @@ button   {
     padding: 10px;
 
     cursor: pointer;
-    transition: .1s ease;
 
     &:hover {
         transform: scale(1.05);
         transition: .1s ease;
-    }
-
-    &.active {
-        transform: scale(0.99);
-        background: rgb(47, 47, 47);
+        background: rgb(64, 191, 255);
         color: white;
     }
-}
 
+    &:active {
+        transform: scale(0.99);
+    }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import CardMovie from '../components/elements/CardMovie';
 
 const MoviesData = ({ selectedGenres, sortBy }) => {
@@ -29,6 +30,7 @@ const MoviesData = ({ selectedGenres, sortBy }) => {
                 {sortedMovies().map((movie) => (
                     <li key={movie.id}>
                         <CardMovie
+                            id={movie.id}
                             title={movie.title}
                             image={movie.image}
                             full_description={movie.full_description}

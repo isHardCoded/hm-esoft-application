@@ -1,21 +1,30 @@
+import React from 'react';
+import { useMovieContext } from '../context/ContextMovie';
+import { Link } from 'react-router-dom';
+
 const Sidebar = () => {
+    const { likedMovies, futureMovies } = useMovieContext();
+
     return (
         <div className="sidebar">
             <div className="likedMovies">
                 <h4>Любимые фильмы</h4>
-                <a href="#">Крестный отец</a>
-                <a href="#">Крестный отец</a>
-                <a href="#">Крестный отец</a>
-
+                {likedMovies.map((movie, index) => (
+                    <div key={index}>
+                        <Link to={`/films/${movie.title}/details/${movie.rating}`}>{movie}</Link>
+                    </div>    
+                ))}
             </div>
             <div className="futureMovies">
                 <h4>Фильмы к просмотру</h4>
-                <a href="#">Крестный отец</a>
-                <a href="#">Крестный отец</a>
-                <a href="#">Крестный отец</a>
+                {futureMovies.map((movie, index) => (
+                    <div key={index}>
+                        <Link to={`/films/${movie.title}/details/${movie.rating}`}>{movie}</Link>
+                    </div>
+                ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

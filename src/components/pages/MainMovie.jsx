@@ -1,21 +1,25 @@
 import { useState } from 'react';
+import { MovieProvider } from '../context/ContextMovie';
+
+import genresData from '../../data/GenresData';
 import FilterMovie from '../actions/FilterMovie';
 import SortMovie from '../actions/SortMovie';
 import MoviesData from '../../data/MoviesData';
 import Sidebar from '../elements/Sidebar';
+import Header from '../elements/Header';
+import Catalog from '../elements/Catalog';
 
 const MainMovie = () => {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [activeGenre, setActiveGenre] = useState(null);
     const [sortBy, setSortBy] = useState(null);
-
+    
     const handleGenreFilter = (genre) => {
         if (selectedGenres.includes(genre)) {
             setSelectedGenres(selectedGenres.filter((g) => g !== genre));
         } else {
             setSelectedGenres([genre]);
         }
-        setActiveGenre(genre);
     };
 
     const handleSort = (sortType) => {
@@ -29,9 +33,11 @@ const MainMovie = () => {
     };
 
     return (
-        <div className="container">
+        <MovieProvider>
+            <div className="container">
+            <Header/>
             <div className="mainSection">
-                <h1>Популярные фильмы</h1>
+                <Catalog page={"Популярные фильмы"}/>
                 <div className="mainButtons">
                     <h4>Сортировать</h4>
                     <div className="sortButtons">
@@ -40,14 +46,12 @@ const MainMovie = () => {
                     </div>
                     <h4>Фильтровать по жанру</h4>
                     <div className="filterButtons">
-                        {["Драма", "Криминал", "Боевик", "Анимация", "Комедия", "Приключения", "Триллер", "Фантастика", "Биография", "Мюзикл", "Фэнтези", "Романтика"].map((genre) => (
-                            <FilterMovie
-                                key={genre}
-                                className={activeGenre === genre ? 'active' : null}
-                                onClick={() => handleGenreFilter(genre)}
-                            >
-                                {genre}
-                            </FilterMovie>
+                        {genresData.map((genre) => (
+                            <div key={genre.id}>
+                                <FilterMovie onClick={() => handleGenreFilter(genre.genre)}>
+                                    {genre.genre}
+                                </FilterMovie>
+                            </div>
                         ))}
                         <FilterMovie onClick={resetFilters}>Сбросить</FilterMovie>
                     </div>
@@ -56,6 +60,7 @@ const MainMovie = () => {
                 <Sidebar></Sidebar>
             </div>
         </div>
+        </MovieProvider>
     );
 };
 
