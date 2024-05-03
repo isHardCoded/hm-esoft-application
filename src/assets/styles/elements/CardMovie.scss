@@ -10,6 +10,11 @@
 
     display: flex;
 
+    .cardImage {
+        width: 150px;
+        height: 230px;
+    }
+
     .cardContent {
         display: flex;
         flex-direction: column;
@@ -19,7 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
+            
             .cardRating {
                 border: 1px black solid;
                 padding: 1px 5px 1px 5px;

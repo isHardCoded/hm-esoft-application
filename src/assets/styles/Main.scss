@@ -1,2 +1,41 @@
 @import url(./elements/CardMovie.scss);
 @import url(./pages/MainMovie.scss);
+@import url(./elements/SortMovie.scss);
+@import url(./elements/FilterMovie.scss);
+@import url(./elements/Sidebar.scss);
+
+.container {
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.mainButtons {
+    display: flex;
+    gap: 30px;
+
+    flex-direction: column;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.sortButtons {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+    width: 340px;
+}
+
+.filterButtons {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+    height: 82px;
+    flex-wrap: wrap;
+}

@@ -1,7 +1,7 @@
 const CardMovie = ({title, image, full_description, rating, actors, genres}) => {
     return (
         <div className="cardMovie">
-            <img src={image} alt={rating} />
+            <img className="cardImage" src={image} alt={rating} />
             <div className="cardContent">
                 <div>
                     <a href="#">{title}</a>

@@ -4,11 +4,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: rgb(242, 242, 242);
 }
 
 * {
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
 }

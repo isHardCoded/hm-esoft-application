@@ -1,0 +1,21 @@
+.sidebar {
+    border-radius: 4.7px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    
+    padding: 20px;
+    width: 300px;
+
+    position:fixed;
+    top: 486px;
+    right: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .likedMovies, .futureMovies {
+        display: flex;
+        flex-direction: column;
+    }
+}
