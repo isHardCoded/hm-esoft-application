@@ -12,3 +12,24 @@ h1 {
     text-align: center;
     margin-top: 75px;
 }
+
+.mainButtons {
+    display: flex;
+    gap: 30px;
+
+    flex-direction: column;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+    margin-top: 30px;
+    
+    h3 {
+        color: white;
+        background-color: rgb(64, 191, 255);;
+        padding: 10px;
+    }
+}

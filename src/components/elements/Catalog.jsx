@@ -1,7 +1,7 @@
-const Catalog = ({page}) => {
+const Catalog = ({page, title}) => {
     return (
         <>
-        <h3>{page}</h3>
+        <h3>{page} {title}</h3>
         </>
     )
 }

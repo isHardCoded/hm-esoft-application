@@ -26,3 +26,11 @@
     }
 }
 
+.filterButtons {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+    height: 82px;
+    flex-wrap: wrap;
+}

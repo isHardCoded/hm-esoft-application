@@ -37,6 +37,7 @@ const MoviesData = ({ selectedGenres, sortBy }) => {
                             rating={movie.rating}
                             actors={movie.actors}
                             genres={movie.genres}
+                            type={movie.type}
                         />
                     </li>
                 ))}

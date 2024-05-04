@@ -11,7 +11,6 @@ import Catalog from '../elements/Catalog';
 
 const MainMovie = () => {
     const [selectedGenres, setSelectedGenres] = useState([]);
-    const [activeGenre, setActiveGenre] = useState(null);
     const [sortBy, setSortBy] = useState(null);
     
     const handleGenreFilter = (genre) => {
@@ -28,7 +27,6 @@ const MainMovie = () => {
 
     const resetFilters = () => {
         setSelectedGenres([]);
-        setActiveGenre(null);
         setSortBy(null);
     };
 

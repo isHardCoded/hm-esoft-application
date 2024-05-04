@@ -1,9 +1,15 @@
+import Header from "../elements/Header"
+import Catalog from "../elements/Catalog"
+
 const SearchMovie = () => {
     
     return (
-        <>
-            <h1>Поиск фильма</h1>
-        </>
+        <div className="container">
+            <div className="searchMovie">
+                <Header/>
+                <Catalog page={"Поиск фильма"}/>
+            </div>
+        </div>
     )
 }
 

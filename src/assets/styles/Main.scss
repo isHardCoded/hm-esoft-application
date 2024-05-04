@@ -5,46 +5,11 @@
 @import url(./elements/Sidebar.scss);
 @import url(./elements/Header.scss);
 @import url(./actions/AddButtons.scss);
+@import url(./elements/CardDetailed.scss);
+@import url(./pages/DetailMovie.scss);
+@import url(./pages//SearchMovie.scss);
 
 .container {
     width: 1090px;
     margin: 0 auto;
-}
-
-.mainButtons {
-    display: flex;
-    gap: 30px;
-
-    flex-direction: column;
-}
-
-.mainSection {
-    display: flex;
-    flex-direction: column;
-
-    gap: 30px;
-    margin-top: 30px;
-    
-    h3 {
-        color: white;
-        background-color: rgb(64, 191, 255);;
-        padding: 10px;
-    }
-}
-
-.sortButtons {
-    display: flex;
-    gap: 10px;
-
-    flex-direction: column;
-    width: 340px;
-}
-
-.filterButtons {
-    display: flex;
-    gap: 10px;
-
-    flex-direction: column;
-    height: 82px;
-    flex-wrap: wrap;
 }

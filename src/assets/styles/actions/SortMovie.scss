@@ -22,3 +22,11 @@
         transform: scale(0.99);
     }
 }
+
+.sortButtons {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: row;
+    width: 300px;
+}

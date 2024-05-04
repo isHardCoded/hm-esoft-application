@@ -2,7 +2,7 @@ import AddFutureMovie from "../actions/AddFutureMovie";
 import AddLikedMovie from "../actions/AddLikedMovie";
 import { Link } from 'react-router-dom';
 
-const CardMovie = ({title, image, full_description, rating, actors, genres}) => {
+const CardMovie = ({id, title, image, full_description, rating, actors, genres, type}) => {
     return (
         <div className="cardMovie">
             <img className="cardImage" src={image} alt={rating} />
@@ -18,6 +18,9 @@ const CardMovie = ({title, image, full_description, rating, actors, genres}) => 
                     </div>
                     <div className="cardCategory">
                         <h4>Жанр:<p>{genres.join(', ')}</p></h4>
+                    </div>
+                    <div className="cardType">
+                        <h4>Тип:<p>{type}</p></h4>
                     </div>
                 </div>
                 <div className="cardActions">
