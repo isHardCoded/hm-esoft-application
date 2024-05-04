@@ -1,2 +1,15 @@
 @import url(./elements/CardMovie.scss);
 @import url(./pages/MainMovie.scss);
+@import url(./actions/SortMovie.scss);
+@import url(./actions/FilterMovie.scss);
+@import url(./elements/Sidebar.scss);
+@import url(./elements/Header.scss);
+@import url(./actions/AddButtons.scss);
+@import url(./elements/CardDetailed.scss);
+@import url(./pages/DetailMovie.scss);
+@import url(./pages//SearchMovie.scss);
+
+.container {
+    width: 1090px;
+    margin: 0 auto;
+}

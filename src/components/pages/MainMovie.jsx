@@ -1,12 +1,65 @@
-import MoviesData from "../../data/MoviesData"
+import { useState } from 'react';
+import { MovieProvider } from '../context/ContextMovie';
 
-const MainMovie = () => { 
+import genresData from '../../data/GenresData';
+import FilterMovie from '../actions/FilterMovie';
+import SortMovie from '../actions/SortMovie';
+import MoviesData from '../../data/MoviesData';
+import Sidebar from '../elements/Sidebar';
+import Header from '../elements/Header';
+import Catalog from '../elements/Catalog';
+
+const MainMovie = () => {
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [sortBy, setSortBy] = useState(null);
     
-    return (
-        <>
-            <MoviesData/>
-        </>
-    )
-}
+    const handleGenreFilter = (genre) => {
+        if (selectedGenres.includes(genre)) {
+            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
+        } else {
+            setSelectedGenres([genre]);
+        }
+    };
 
-export default MainMovie
+    const handleSort = (sortType) => {
+        setSortBy(sortType);
+    };
+
+    const resetFilters = () => {
+        setSelectedGenres([]);
+        setSortBy(null);
+    };
+
+    return (
+        <MovieProvider>
+            <div className="container">
+            <Header/>
+            <div className="mainSection">
+                <Catalog page={"Популярные фильмы"}/>
+                <div className="mainButtons">
+                    <h4>Сортировать</h4>
+                    <div className="sortButtons">
+                        <SortMovie label={"По возрастанию рейтинга"} onClick={() => handleSort("ratingAsc")} />
+                        <SortMovie label={"По убыванию рейтинга"} onClick={() => handleSort("ratingDesc")} />
+                    </div>
+                    <h4>Фильтровать по жанру</h4>
+                    <div className="filterButtons">
+                        {genresData.map((genre) => (
+                            <div key={genre.id}>
+                                <FilterMovie onClick={() => handleGenreFilter(genre.genre)}>
+                                    {genre.genre}
+                                </FilterMovie>
+                            </div>
+                        ))}
+                        <FilterMovie onClick={resetFilters}>Сбросить</FilterMovie>
+                    </div>
+                </div>
+                <MoviesData selectedGenres={selectedGenres} sortBy={sortBy} />
+                <Sidebar></Sidebar>
+            </div>
+        </div>
+        </MovieProvider>
+    );
+};
+
+export default MainMovie;
