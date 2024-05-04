@@ -11,7 +11,7 @@ const Sidebar = () => {
                 <h4>Любимые фильмы</h4>
                 {likedMovies.map((movie, index) => (
                     <div key={index}>
-                        <Link to={`/films/${movie.title}`}>{movie}</Link>
+                        {movie}
                     </div>    
                 ))}
             </div>
@@ -19,7 +19,7 @@ const Sidebar = () => {
                 <h4>Фильмы к просмотру</h4>
                 {futureMovies.map((movie, index) => (
                     <div key={index}>
-                        <Link to={`/films/${movie.title}`}>{movie}</Link>
+                        {movie}
                     </div>
                 ))}
             </div>

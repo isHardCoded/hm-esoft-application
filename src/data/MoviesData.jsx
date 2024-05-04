@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import CardMovie from '../components/elements/CardMovie';
+import CardMovie from '../components/elements/cards/CardMovie';
 
 const MoviesData = ({ selectedGenres, sortBy }) => {
     const [movies, setMovies] = useState([]);
@@ -33,7 +33,7 @@ const MoviesData = ({ selectedGenres, sortBy }) => {
                             id={movie.id}
                             title={movie.title}
                             image={movie.image}
-                            full_description={movie.full_description}
+                            short_description={movie.short_description}
                             rating={movie.rating}
                             actors={movie.actors}
                             genres={movie.genres}

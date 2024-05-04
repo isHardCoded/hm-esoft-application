@@ -1,11 +1,15 @@
 import React from 'react';
 import { useMovieContext } from '../context/ContextMovie';
 
-const AddLikedMovie = ({title}) => {
-    const { setLikedMovies } = useMovieContext();
+const AddLikedMovie = ({ title }) => {
+    const { likedMovies, setLikedMovies } = useMovieContext();
 
     const handleAddLikedMovie = () => {
-        setLikedMovies(prevMovies => [...prevMovies, title]);
+        if (!likedMovies.includes(title)) {
+            setLikedMovies(prevMovies => [...prevMovies, title]);
+        } else {
+            alert(`Фильм "${title}" уже есть в списке избранных.`);
+        }
     };
 
     return (

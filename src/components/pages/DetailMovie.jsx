@@ -1,12 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import DetailedMovieCard from '../elements/DetailedMovieCard';
+import DetailedCardMovie from '../elements/cards/DetailedCardMovie';
 import Catalog from '../elements/Catalog';
 import Header from '../elements/Header';
+import Comment from '../elements/Comment';
+import Similar from '../elements/Similar';
 
 const DetailMovie = () => {
-    const { title } = useParams();
+    const { title, genres } = useParams();
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -24,7 +26,8 @@ const DetailMovie = () => {
              {movies.map((movie) => {
                 if (movie.title == title) {
                     return (
-                        <DetailedMovieCard
+                        <>
+                        <DetailedCardMovie
                             key={movie.id}
                             id={movie.id}
                             title={movie.title}
@@ -39,10 +42,31 @@ const DetailMovie = () => {
                             type={movie.type}
                             comments={movie.comments}
                         />
+                        
+                        <Comment comments={movie.comments}/>
+                            
+                        </>
                     );
                 }
-                return null;
             })}
+            
+            <ul className='similarCard'>
+                <h4>Похожее</h4>
+                <div>
+                {movies.map((movie)=>{
+                        if (movie.genres == genres) {
+                            return (
+                                <li key={movie.id}>
+                                    <Similar image={movie.image}
+                                             genres={movie.genres}
+                                             title={movie.title}/>
+                                </li>
+                            )
+                        }
+                        return null;
+                    })}
+                </div>
+            </ul>
             </div>
         </div>
     )

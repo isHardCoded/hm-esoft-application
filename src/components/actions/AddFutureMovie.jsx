@@ -2,10 +2,14 @@ import React from 'react';
 import { useMovieContext } from '../context/ContextMovie';
 
 const AddFutureMovie = ({title}) => {
-    const { setFutureMovies } = useMovieContext();
+    const { futureMovies, setFutureMovies } = useMovieContext();
 
     const handleAddFutureMovie = () => {
-        setFutureMovies(prevMovies => [...prevMovies, title]);
+        if (!futureMovies.includes(title)) {
+            setFutureMovies(prevMovies => [...prevMovies, title]);
+        } else {
+            alert(`Фильм "${title}" уже есть в списке фильмов к просмотру.`);
+        }
     };
 
     return (
