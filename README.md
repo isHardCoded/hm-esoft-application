@@ -1,4 +1,4 @@
-## Finder Movie
+## Description
 
 Завершающая домашняя работа по React. Реализовал то, что смог и как смог, уверен, что можно было бы поработать над оптимизацией, реализовать некоторые функции другими способами. Упустил использование различных хуков, так как пропустил достаточно лекций по этой теме, однако все, что знаю, равно пытался использовать всё на максимум.
 
@@ -7,8 +7,13 @@
 
 https://hm-esoft-application.vercel.app/
 
-## Install
+## Installation
 
 ```bash
+    git init
+    git clone https://github.com/isHardCoded/hm-esoft-application.git
+
     npm install sass, vite, react-router-dom, react-hook-form
     npm run dev
+
+
