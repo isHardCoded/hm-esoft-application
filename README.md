@@ -13,8 +13,5 @@ https://hm-esoft-application.vercel.app/
 ```bash
     git init
     git clone https://github.com/isHardCoded/hm-esoft-application.git
-
     npm install sass, vite, react-router-dom, react-hook-form
     npm run dev
-
-
