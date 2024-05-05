@@ -30,7 +30,7 @@ const Comment = ({comments}) => {
                 </ul>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <p>Оставить комментарий</p>
-                    <input type="text" {...register("comment")} />
+                    <input type="text" placeholder='Ваш комментарий' {...register("comment")} />
                     <button className='addBtn' type="submit">Добавить комментарий</button>
                 </form>
                 </div>

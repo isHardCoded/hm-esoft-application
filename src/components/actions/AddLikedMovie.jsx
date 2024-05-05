@@ -1,4 +1,3 @@
-import React from 'react';
 import { useMovieContext } from '../context/ContextMovie';
 
 const AddLikedMovie = ({ title }) => {
